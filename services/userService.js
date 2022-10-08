@@ -21,7 +21,7 @@ export async function createUser(name, gender, email) {
   };
   const newUsers = [...users, newUser];
   await promises.writeFile('db/users.json', JSON.stringify(newUsers, null, 2));
-  return {newUser};
+  return newUser;
 }
 
 export async function deleteUser(id) {
@@ -41,5 +41,5 @@ export async function deleteUser(id) {
       2,
     ),
   );
-  return {deletedUser};
+  return deletedUser;
 }
